@@ -16,6 +16,22 @@ Gem::Specification.new do |s|
     "LICENSE",
     "README.md"
   ]
+  s.files = [
+    "Gemfile",
+    "LICENSE",
+    "README.md",
+    "Rakefile",
+    "VERSION",
+    "lib/saasu.rb",
+    "lib/saasu/base.rb",
+    "lib/saasu/invoice.rb",
+    "saasu.gemspec",
+    "spec/base_spec.rb",
+    "spec/mocks/invoice.xml",
+    "spec/mocks/invoice_item.xml",
+    "spec/spec.opts",
+    "spec/spec_helper.rb"
+  ]
   s.homepage = %q{http://github.com/kieranj/saasu}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
