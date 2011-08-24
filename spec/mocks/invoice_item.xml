@@ -1,0 +1,33 @@
+<invoiceListItem>
+  <invoiceUid>5335574</invoiceUid>
+  <lastUpdatedUid>AAAAAAM//Ic=</lastUpdatedUid>
+  <ccy>GBP</ccy>
+  <autoPopulateFXRate>false</autoPopulateFXRate>
+  <fcToBcFxRate>1.0000000000</fcToBcFxRate>
+  <transactionType>S</transactionType>
+  <invoiceDate>2011-02-21</invoiceDate>
+  <utcFirstCreated>2011-02-21T10:05:40</utcFirstCreated>
+  <utcLastModified>2011-02-22T09:20:01</utcLastModified>
+  <summary/>
+  <invoiceNumber>2</invoiceNumber>
+  <purchaseOrderNumber/>
+  <dueDate/>
+  <totalAmountInclTax>100.0000</totalAmountInclTax>
+  <paymentCount>0</paymentCount>
+  <totalAmountPaid>0.0000</totalAmountPaid>
+  <amountOwed>100.0000</amountOwed>
+  <paidStatus>Unpaid</paidStatus>
+  <requiresFollowUp>False</requiresFollowUp>
+  <isSent>True</isSent>
+  <invoiceLayout>S</invoiceLayout>
+  <invoiceStatus>I</invoiceStatus>
+  <contactUid>1098116</contactUid>
+  <contactGivenName>tom</contactGivenName>
+  <contactFamilyName>jones</contactFamilyName>
+  <contactOrganisationName/>
+  <shipToContactUid/>
+  <shipToContactGivenName/>
+  <shipToContactLastName/>
+  <shipToContactOrganisation/>
+  <tags>urgent,important</tags>
+</invoiceListItem>

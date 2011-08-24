@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<invoiceResponse> 
+  <invoice uid="5335574" lastUpdatedUid="AAAAAAM//Ic="> 
+    <utcFirstCreated>2011-02-21T10:05:40</utcFirstCreated> 
+    <utcLastModified>2011-02-22T09:20:01</utcLastModified> 
+    <transactionType>S</transactionType> 
+    <date>2011-02-21</date> 
+    <contactUid>1098116</contactUid> 
+    <ccy>GBP</ccy> 
+    <autoPopulateFxRate>false</autoPopulateFxRate> 
+    <fcToBcFxRate>1.0000000000</fcToBcFxRate> 
+    <requiresFollowUp>false</requiresFollowUp> 
+    <layout>S</layout> 
+    <status>I</status> 
+    <invoiceNumber>2</invoiceNumber> 
+    <invoiceItems> 
+      <serviceInvoiceItem> 
+        <description>ghfj</description> 
+        <accountUid>10</accountUid> 
+        <totalAmountInclTax>100.0000</totalAmountInclTax> 
+      </serviceInvoiceItem> 
+    </invoiceItems> 
+    <isSent>false</isSent> 
+  </invoice> 
+</invoiceResponse>
