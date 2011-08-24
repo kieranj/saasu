@@ -6,6 +6,7 @@ module Saasu
     
     def initialize(xml)
       klass = self.class.name.split("::")[1].downcase
+
       xml.children.each do |child|
         if !child.text?
           child.attributes.each do |attr|
@@ -70,8 +71,13 @@ module Saasu
       # Generally the class name will be suitable and options will not need to be provided
       # @param [Hash] options to override the default settings
       #
-      def defaults(options = {})
-        default_options.merge!(options)
+      def defaults(options = nil)
+        @defaults ||= default_options
+        if options
+          @defaults = default_options.merge!(options)
+        else
+          @defaults
+        end
       end
        
       protected
@@ -79,10 +85,11 @@ module Saasu
         # Default options for the class
         #
         def default_options
-          defaults                   = {}
-          defaults[:resource_name]   = name.split("::").last.downcase
-          defaults[:collection_name] = name.split("::").last.downcase + "ListItem"
-          defaults
+          options                   = {}
+          options[:query_options]   ||= {}
+          options[:resource_name]   = name.split("::").last.downcase
+          options[:collection_name] = name.split("::").last.downcase + "ListItem"
+          options
         end
         
         # Defines the fields for a resource and any transformations
@@ -95,7 +102,7 @@ module Saasu
         end
         
         def define_accessor(field, type)
-          m = field.sub(/#{defaults[:resource_name]}_/, "")
+          m = field.sub(/^#{defaults[:resource_name]}_/, "")
           case type
           when :decimal
             class_eval <<-END
@@ -148,17 +155,16 @@ module Saasu
         #
         def get(options = {}, all = true)
           uri              = URI.parse(request_path(options, all))
-          puts request_path(options, all)
           http             = Net::HTTP.new(uri.host, uri.port)
           http.use_ssl     = true
           http.verify_mode = OpenSSL::SSL::VERIFY_NONE
           response         = http.request(Net::HTTP::Get.new(uri.request_uri))
-          puts response.body
           (options[:format] && options[:format] == "pdf") ? response.body : response.body
         end
         
         def query_string(options = {})
-          options = { :wsaccesskey => api_key, :fileuid => file_uid }.merge!(options)
+          options = defaults[:query_options].merge(options)
+          options = { :wsaccesskey => api_key, :fileuid => file_uid }.merge(options)
           options.map { |k,v| "#{k.to_s.gsub(/_/, "")}=#{v}"}.join("&")
         end
         

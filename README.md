@@ -19,9 +19,11 @@ To fetch all invoices
 
     invoices = Saasu::Invoice.all
     
+By default all sales purchases are retrieved as this field is required.
+
 You can pass in any conditions as a hash. The keys should be in snake case.
 
-    invoices = Saasu::Invoice.all(:transaction_type => "s", :paid_status => "Unpaid")
+    invoices = Saasu::Invoice.all(:transaction_type => "p", :paid_status => "Unpaid")
     
 For a complete list of supported options see the [Saasu API Reference](http://help.saasu.com/api/http-get/)
     

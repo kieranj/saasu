@@ -37,6 +37,7 @@ module Saasu
            "totalAmountPaid"           => :decimal,
            "invoiceItems"              => :array
       
+      defaults :query_options => { :transaction_type => "s" }
   end
   
 end
